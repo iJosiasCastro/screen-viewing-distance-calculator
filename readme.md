@@ -1,0 +1,1 @@
+# Screen size, distance and resolution calculator
