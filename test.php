@@ -1,6 +1,6 @@
 <?php include('./components/layout/head.php') ?>
 
-<svg xmlns="http://www.w3.org/2000/svg" class="border border-black" viewBox="0 0 30 40" onload="makeDraggable(evt)" width="800" height="600">
+<svg xmlns="http://www.w3.org/2000/svg" class="border border-black" viewBox="7 0 22.5 40" onload="makeDraggable(evt)" width="200">
     <g>
         <text x="15" y="1" text-anchor="middle" font-size="1" class="static select-none">27''</text>
         <rect id="screen" class="draggable" x="7.5" y="1.5" width="15" height="1" />
@@ -15,7 +15,20 @@
         <line id="cxn" class="cxn"></line>
         <line id="cxn2" class="cxn"></line>
     </g>
+    <g>
+        <line id="ruleMainLine" x1="23" y1="2.5" x2="23" y2="10" stroke="black" stroke-width="0.1" />
+
+        <line x1="22.5" y1="2.5" x2="23.5" y2="2.5" stroke="black" stroke-width="0.1" />
+
+        <line id="ruleBottomLine" x1="22.5" y1="20" x2="23.5" y2="20" stroke="black" stroke-width="0.1" />
+
+        <text id="ruleText" x="23.5" y="6" font-size="1" class="static select-none">
+            1.40m (4.6ft)
+        </text>
+    </g>
+
 </svg>
+
 
 
 <script>
@@ -24,9 +37,12 @@
     var cxn = document.getElementById('cxn');
     var cxn2 = document.getElementById('cxn2');
     var angle = document.getElementById('angle');
+    var ruleMainLine = document.getElementById('ruleMainLine');
+    var ruleBottomLine = document.getElementById('ruleBottomLine');
+    var ruleText = document.getElementById('ruleText');
 
     var limitY = {
-        top: '4.8',
+        top: '4.7',
         bottom: '36.5'
     };
 
@@ -111,9 +127,20 @@
 
         // Convert the angle to degrees
         var angleDegrees = (angleRadians * 180) / Math.PI;
+        if(angleDegrees > 170)
+            angleDegrees = 170;
+
+        if(angleDegrees < 26)
+            angleDegrees = 26;
 
         angle.setAttributeNS(null, 'y', cxn_y1 + 4.5);
         angle.textContent = Math.round(angleDegrees) + ' degree viewing angle';
+
+        ruleMainLine.setAttributeNS(null, 'y2', cxn_y1);
+        ruleBottomLine.setAttributeNS(null, 'y1', cxn_y1);
+        ruleBottomLine.setAttributeNS(null, 'y2', cxn_y1);
+
+        ruleText.setAttributeNS(null, 'y', (cxn_y1 / 2) + 1.6);
     }
 
 
