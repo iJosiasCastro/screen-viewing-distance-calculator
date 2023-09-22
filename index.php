@@ -3,13 +3,13 @@
 <?php include('./components/layout/head.php') ?>
 
 <body class="bg-gray-100 py-8">
+    <h1 class="text-2xl font-semibold mb-4 px-2 mx-auto max-w-4xl">Screen Viewing Distance Calculator</h1>
     <div class="container mx-auto max-w-4xl bg-white p-8 rounded shadow-lg">
-        <h1 class="text-2xl font-semibold mb-4">Screen Siting Distance Calculator</h1>
         <div id="calculatorSection" style="display: non;">
             <?php include('./components/form.php') ?>
         </div>
         <div id="resultSection" style="display: none;">
-            <button class="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-3 py-2 rounded mt-4 flex items-center" onclick="resetCalculator()">
+            <button class="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-3 py-2 rounded flex items-center" onclick="resetCalculator()">
                 <i class="fas fa-chevron-left mr-2"></i>
                 Back to Calculator
             </button>
@@ -41,6 +41,10 @@
                     ?>
                 </div>
             </div>
+            <small>
+                The information is accurate to 99%. It is not recommended for commercial purposes.
+            </small>
+            
         </div>
     </div>
 
@@ -78,21 +82,18 @@
 
             // Minimum distance
             const minimumDistanceAngle = 70;
-            const minimumDistance = (diagonal / 12) / (2 * Math.tan((minimumDistanceAngle * Math.PI) / 180));
 
             // Maximum distance
             const maximumDistanceAngle = 26;
-            const maximumDistance = (diagonal / 12) / (2 * Math.tan((maximumDistanceAngle * Math.PI) / 180));
 
             // Visual Acuity distance
             const visualAcuityDistanceAngle = width / 60;
-            const visualAcuityDistance = (diagonal / 12) / (2 * Math.tan((visualAcuityDistanceAngle * Math.PI) / 180));
 
-            console.log('Minimum Viewing Distance:', minimumDistance.toFixed(1), 'ft');
-            console.log('Maximum Viewing Distance:', maximumDistance.toFixed(1), 'ft');
-            console.log('Visual Acuity Distance:', visualAcuityDistance.toFixed(1), 'ft');
+            // console.log(visualAcuityDistanceAngle)
 
-            createGraph('visualAcuityDistance', visualAcuityDistanceAngle, visualAcuityDistance, [screenWidthInches, screenWidthCm]);
+            createGraph('minimumDistance', minimumDistanceAngle, [screenWidthInches, screenWidthCm]);
+            createGraph('maximumDistance', maximumDistanceAngle, [screenWidthInches, screenWidthCm]);
+            createGraph('visualAcuityDistance', visualAcuityDistanceAngle, [screenWidthInches, screenWidthCm]);
 
             // Display the results
             const result = `
