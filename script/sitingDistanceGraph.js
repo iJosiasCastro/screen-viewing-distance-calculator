@@ -10,32 +10,40 @@ var angle = null;
 var ruleMainLine = null;
 var ruleBottomLine = null;
 var ruleText = null;
+var screenSize = null;
 
-function createGraph(graphName, graphAngle, graphDistance, graphScreenSize){
+function createGraph(graphName, graphAngle, graphScreenSize){
     let screenSizeText = document.querySelector('#' + graphName + ' .screenSizeText');
     screenSizeText.textContent = `${graphScreenSize[0].toFixed(1)}" (${graphScreenSize[1].toFixed(1)}cm)`
 
     let data = eval(`${graphName}Data`);
     circle = data.circle;
+    data.screenSize = graphScreenSize;
 
+    // 1. Calculate the distance
+    const angleInRadians = (Math.floor(graphAngle) * Math.PI) / 180;
+    const distanceCm = graphScreenSize[1] / (2 * Math.tan(angleInRadians / 2));
+    const distanceMeters = distanceCm / 100;
+    
+    // 2. Tranform the distance to a cy
     // Constants
-    const angleMax = 170;
-    const y1 = 4.723525230987917;
-    const angleMin = 10;
-    const y2 = 36.47334754797441;
+    const x1 = 0.02393479416298604;
+    const y1 = 4.766355140186917;
 
-    // Calculate m and b using linear interpolation
-    const m = (y2 - y1) / (angleMin - angleMax);
-    const b = y1 - m * angleMax;
+    const x2 = 1.5515263066352947;
+    const y2 = 46.421895861148194;
 
-    // Define the formula to calculate Y based on X
-    function calculateY(X) {
-        return m * X + b;
-    }
+    // Calculate the slope (m)
+    const m = (y2 - y1) / (x2 - x1);
 
-    console.log(graphAngle)
-    circle.setAttributeNS(null, 'cy', calculateY(graphAngle));
+    // Calculate the y-intercept (b)
+    const b = y1 - m * x1;
 
+    const calculatedY = m * distanceMeters + b;
+
+    // 3. Update the cy value
+
+    circle.setAttributeNS(null, 'cy', calculatedY);
 
     updateGraph(`${graphName}Data`);
 }
@@ -50,11 +58,10 @@ function updateGraph(dataVarName){
     ruleMainLine = data.ruleMainLine;
     ruleBottomLine = data.ruleBottomLine;
     ruleText = data.ruleText;
+    screenSize = data.screenSize;
     updateConnection(cxn, 'right');
     updateConnection(cxn2, 'left');
     calculateAngle();
-
-
 };
 
 function updateConnection(cxnElem, direction) {
@@ -141,7 +148,18 @@ function calculateAngle() {
         angleDegrees = 10;
 
     angle.setAttributeNS(null, 'y', cxn_y1 + 4.5);
-    angle.textContent = Math.round(angleDegrees) + ' degree viewing angle';
+    angle.textContent = Math.floor(angleDegrees) + ' degree viewing angle';
+
+    // Calculate distance
+    if(screenSize){
+        const angleInRadians = (Math.floor(angleDegrees) * Math.PI) / 180;
+        const distanceCm = screenSize[1] / (2 * Math.tan(angleInRadians / 2));
+        const distanceMeters = distanceCm / 100;
+        const distanceFeet = distanceCm / 30.48;
+
+        ruleText.textContent = `${distanceMeters.toFixed(2)}m (${distanceFeet.toFixed(1)}ft)`;
+    }
+
 
     ruleMainLine.setAttributeNS(null, 'y2', cxn_y1);
     ruleBottomLine.setAttributeNS(null, 'y1', cxn_y1);
