@@ -3,14 +3,44 @@
 <?php include('./components/layout/head.php') ?>
 
 <body class="bg-gray-100 py-8">
-    <div class="container mx-auto max-w-xl bg-white p-8 rounded shadow-lg">
-        <h1 class="text-2xl font-semibold mb-4">Screen Size, Distance, and Resolution Calculator</h1>
-        <div id="calculatorSection">
+    <div class="container mx-auto max-w-4xl bg-white p-8 rounded shadow-lg">
+        <h1 class="text-2xl font-semibold mb-4">Screen Siting Distance Calculator</h1>
+        <div id="calculatorSection" style="display: non;">
             <?php include('./components/form.php') ?>
         </div>
         <div id="resultSection" style="display: none;">
-            <div id="resultSpecs" class="mt-4"></div>
-            <button class="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-4 py-2 rounded mt-4" onclick="resetCalculator()">Back to Calculator</button>
+            <button class="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-3 py-2 rounded mt-4 flex items-center" onclick="resetCalculator()">
+                <i class="fas fa-chevron-left mr-2"></i>
+                Back to Calculator
+            </button>
+            <div id="resultSpecs" class="mt-4 flex w-full">
+                
+
+            </div>
+            
+            <div class="grid grid-cols-3 gap-4 my-5 py-3 border-t border-b">
+                <div class="border-r">
+                    <h4 class="font-semibold mb-2">Minimum distance</h4>
+                    <?php
+                        $id = "minimumDistance";
+                        include('./components/sitingDistanceGraph.php');
+                    ?>
+                </div>
+                <div class="border-r">
+                    <h4 class="font-semibold mb-2">Maximum distance</h4>
+                    <?php
+                        $id = "maximumDistance";
+                        include('./components/sitingDistanceGraph.php');
+                    ?>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-2">Visual Acuity distance</h4>
+                    <?php
+                        $id = "visualAcuityDistance";
+                        include('./components/sitingDistanceGraph.php');
+                    ?>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -47,48 +77,57 @@
             const ppi = Math.sqrt((width ** 2) + (height ** 2)) / diagonal;
 
             // Minimum distance
-            const minimumAngle = 70;
-            const minimumDistance = (diagonal / 12) / (2 * Math.tan((minimumAngle * Math.PI) / 180));
+            const minimumDistanceAngle = 70;
+            const minimumDistance = (diagonal / 12) / (2 * Math.tan((minimumDistanceAngle * Math.PI) / 180));
 
             // Maximum distance
-            const maximumAngle = 26;
-            const maximumDistance = (diagonal / 12) / (2 * Math.tan((maximumAngle * Math.PI) / 180));
+            const maximumDistanceAngle = 26;
+            const maximumDistance = (diagonal / 12) / (2 * Math.tan((maximumDistanceAngle * Math.PI) / 180));
 
             // Visual Acuity distance
-            const visualAcuityAngle = width / 60;
-            const visualAcuityDistance = (diagonal / 12) / (2 * Math.tan((visualAcuityAngle * Math.PI) / 180));
+            const visualAcuityDistanceAngle = width / 60;
+            const visualAcuityDistance = (diagonal / 12) / (2 * Math.tan((visualAcuityDistanceAngle * Math.PI) / 180));
 
             console.log('Minimum Viewing Distance:', minimumDistance.toFixed(1), 'ft');
             console.log('Maximum Viewing Distance:', maximumDistance.toFixed(1), 'ft');
             console.log('Visual Acuity Distance:', visualAcuityDistance.toFixed(1), 'ft');
 
+            createGraph('visualAcuityDistance', visualAcuityDistanceAngle, visualAcuityDistance, [screenWidthInches, screenWidthCm]);
+
             // Display the results
             const result = `
-                Screen Diagonal: ${diagonal.toFixed(1)} ${unit}<br>
-                Screen Resolution: ${width} x ${height}<br>
-                Screen Width: ${screenWidthInches.toFixed(1)}" (${screenWidthCm.toFixed(1)}cm)<br>
-                Screen Height: ${screenHeightInches.toFixed(1)}" (${screenHeightCm.toFixed(1)}cm)<br>
-                Aspect Ratio: ${aspectRatio.toFixed(2)}:1 (${width}:${height})<br>
-                Dot Pitch: ${dotPitchInches.toFixed(3)}" (${dotPitchMm.toFixed(3)}mm)<br>
-                PPI: ${ppi.toFixed(2)}<br>
+                <div class="w-full">
+                    <h3 class="text-2xl mb-2">Display details:</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 md:gap-x-2">
+                        <div>
+                            <span class="font-semibold">Screen Diagonal:</span> ${diagonal.toFixed(1)} ${unit}<br>
+                            <span class="font-semibold">Screen Resolution:</span> ${width} x ${height}<br>
+                        </div>
+                        <div class="row-start-2 md:row-start-1">
+                            <span class="font-semibold">Screen Width:</span> ${screenWidthInches.toFixed(1)}" (${screenWidthCm.toFixed(1)}cm)<br>
+                            <span class="font-semibold">Screen Height:</span> ${screenHeightInches.toFixed(1)}" (${screenHeightCm.toFixed(1)}cm)<br>
+                        </div>
+                        <div>
+                            <span class="font-semibold">Dot Pitch:</span> ${dotPitchInches.toFixed(3)}" (${dotPitchMm.toFixed(3)}mm)<br>
+                            <span class="font-semibold">PPI:</span> ${ppi.toFixed(2)}<br>
+                        </div>
+                    </div>
+                </div>
             `;
 
             document.getElementById("calculatorSection").style.display = 'none';
             document.getElementById("resultSection").style.display = '';
             document.getElementById("resultSpecs").innerHTML = result;
         }
-    </script>
 
-    <script>
         function resetCalculator() {
-            // Clear form inputs
-            document.getElementById("width").value = "";
-            document.getElementById("height").value = "";
-            document.getElementById("diagonal").value = "";
+            document.getElementById("width").value = "1366";
+            document.getElementById("height").value = "671";
+            document.getElementById("diagonal").value = "24";
             document.getElementById("unit").value = "inches";
-
+        
             document.getElementById("resultSection").style.display = 'none';
-
+        
             document.getElementById("calculatorSection").style.display = '';
         }
     </script>
