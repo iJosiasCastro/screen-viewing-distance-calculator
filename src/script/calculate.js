@@ -51,6 +51,8 @@ function calculate() {
     screenWidthCm,
   ]);
 
+  showGuideModal();
+
   // Display the results
   const result = `
         <div class="w-full">

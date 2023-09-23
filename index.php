@@ -74,6 +74,7 @@
             
         </div>
     </div>
+    <?php include('./src/components/guideModal.php') ?>
     <script src="/src/script/calculate.js"></script>    
     <script src="/public/js/flowbite.min.js"></script>    
 </body>
