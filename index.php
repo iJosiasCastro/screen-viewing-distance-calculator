@@ -2,9 +2,9 @@
 <html lang="en">
 <?php include('./src/components/layout/head.php') ?>
 
-<body class="bg-gray-100 py-8">
-    <h1 class="text-2xl font-semibold mb-4 px-2 mx-auto max-w-4xl">Screen Viewing Distance Calculator</h1>
-    <div class="container mx-auto max-w-4xl bg-white p-8 rounded shadow-lg">
+<body class="bg-gray-100 py-8 max-w-4xl mx-auto">
+    <h1 class="text-2xl font-semibold mb-4 px-2">Screen Viewing Distance Calculator</h1>
+    <div class="bg-white p-8 rounded shadow-lg">
         <div id="calculatorSection">
             <?php include('./src/components/form.php') ?>
         </div>
@@ -71,8 +71,15 @@
             <small>
                 It is not recommended to use this information for commercial purposes.
             </small>
-            
         </div>
+    </div>
+    <div class="text-center mt-12">
+        <a href="https://github.com/iJosiasCastro/screen-viewing-distance-calculator">
+            <img class="w-8 mx-auto" src="/public/img/github-mark.svg" alt="GitHub"/>
+            <span>
+                Star the project on GitHub
+            </span>
+        </a>
     </div>
     <?php include('./src/components/guideModal.php') ?>
     <script src="/src/script/calculate.js"></script>    
