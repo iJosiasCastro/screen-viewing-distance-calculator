@@ -19,72 +19,72 @@
     <link rel="icon" href="http://localhost:3000/public/favicon.ico" type="image/x-icon">
     <script src="./index_files/sitingDistanceGraph.js.download"></script>    
 </head> 
-<body class="bg-gray-100 py-8">
-    <h1 class="text-2xl font-semibold mb-4 px-2 mx-auto max-w-4xl">Screen Viewing Distance Calculator</h1>
-    <div class="container mx-auto max-w-4xl bg-white p-8 rounded shadow-lg">
+<body class="bg-gray-100 py-8 max-w-4xl mx-auto">
+    <h1 class="text-2xl font-semibold mb-4 px-2">Screen Viewing Distance Calculator</h1>
+    <div class="bg-white p-8 rounded shadow-lg">
         <div id="calculatorSection">
             <form id="calculatorSection" class="space-y-4" onsubmit="event.preventDefault(); calculate();">
     <div class="flex flex-wrap gap-2">
         
-<button id="44d4c576670a383797fe2e8ba51485a4Button" type="button" class="bg-blue-500 hover:bg-blue-700 text-white text-xs font-bold py-2 px-4 rounded btn-sm">
+<button id="6b08a39568c409a2d723b47c93f2df47Button" type="button" class="bg-blue-500 hover:bg-blue-700 text-white text-xs font-bold py-2 px-4 rounded btn-sm">
     HD</button>
 
 <script>
-    document.getElementById('44d4c576670a383797fe2e8ba51485a4Button').addEventListener('click', () => {
+    document.getElementById('6b08a39568c409a2d723b47c93f2df47Button').addEventListener('click', () => {
         document.getElementById("width").value = 1366;
         document.getElementById("height").value = 768;
     });
 </script>
-<button id="af3936dd8de62725d1e05942323638d9Button" type="button" class="bg-blue-500 hover:bg-blue-700 text-white text-xs font-bold py-2 px-4 rounded btn-sm">
+<button id="818dcb8664dd98ca8ae2fd2d07a5f880Button" type="button" class="bg-blue-500 hover:bg-blue-700 text-white text-xs font-bold py-2 px-4 rounded btn-sm">
     HD+</button>
 
 <script>
-    document.getElementById('af3936dd8de62725d1e05942323638d9Button').addEventListener('click', () => {
+    document.getElementById('818dcb8664dd98ca8ae2fd2d07a5f880Button').addEventListener('click', () => {
         document.getElementById("width").value = 1699;
         document.getElementById("height").value = 900;
     });
 </script>
-<button id="82e292e1d88d79582b7b39e318c43c7eButton" type="button" class="bg-blue-500 hover:bg-blue-700 text-white text-xs font-bold py-2 px-4 rounded btn-sm">
+<button id="89081e99e1510221cd85c29f754e58ccButton" type="button" class="bg-blue-500 hover:bg-blue-700 text-white text-xs font-bold py-2 px-4 rounded btn-sm">
     FHD</button>
 
 <script>
-    document.getElementById('82e292e1d88d79582b7b39e318c43c7eButton').addEventListener('click', () => {
+    document.getElementById('89081e99e1510221cd85c29f754e58ccButton').addEventListener('click', () => {
         document.getElementById("width").value = 1920;
         document.getElementById("height").value = 1080;
     });
 </script>
-<button id="89fbd6dce3af5ba1430faddb82c6ff8bButton" type="button" class="bg-blue-500 hover:bg-blue-700 text-white text-xs font-bold py-2 px-4 rounded btn-sm">
+<button id="ac7998f6d39de5273fa1d79ec93d3e0aButton" type="button" class="bg-blue-500 hover:bg-blue-700 text-white text-xs font-bold py-2 px-4 rounded btn-sm">
     WQHD</button>
 
 <script>
-    document.getElementById('89fbd6dce3af5ba1430faddb82c6ff8bButton').addEventListener('click', () => {
+    document.getElementById('ac7998f6d39de5273fa1d79ec93d3e0aButton').addEventListener('click', () => {
         document.getElementById("width").value = 2560;
         document.getElementById("height").value = 1440;
     });
 </script>
-<button id="729052b4ce7891b6a0dcf5e17b450d5eButton" type="button" class="bg-blue-500 hover:bg-blue-700 text-white text-xs font-bold py-2 px-4 rounded btn-sm">
+<button id="5fb9508adfa2f512ed74af9f24134dbdButton" type="button" class="bg-blue-500 hover:bg-blue-700 text-white text-xs font-bold py-2 px-4 rounded btn-sm">
     WQXGA</button>
 
 <script>
-    document.getElementById('729052b4ce7891b6a0dcf5e17b450d5eButton').addEventListener('click', () => {
+    document.getElementById('5fb9508adfa2f512ed74af9f24134dbdButton').addEventListener('click', () => {
         document.getElementById("width").value = 2560;
         document.getElementById("height").value = 1600;
     });
 </script>
-<button id="25a00cea7e7c9a79f99c69dbe0bc0a94Button" type="button" class="bg-blue-500 hover:bg-blue-700 text-white text-xs font-bold py-2 px-4 rounded btn-sm">
+<button id="05fe317afb7295efaf1dbf0a9b08dffcButton" type="button" class="bg-blue-500 hover:bg-blue-700 text-white text-xs font-bold py-2 px-4 rounded btn-sm">
     QHD</button>
 
 <script>
-    document.getElementById('25a00cea7e7c9a79f99c69dbe0bc0a94Button').addEventListener('click', () => {
+    document.getElementById('05fe317afb7295efaf1dbf0a9b08dffcButton').addEventListener('click', () => {
         document.getElementById("width").value = 3200;
         document.getElementById("height").value = 1800;
     });
 </script>
-<button id="eecb94cda158af9773e9047282796ee9Button" type="button" class="bg-blue-500 hover:bg-blue-700 text-white text-xs font-bold py-2 px-4 rounded btn-sm">
+<button id="2e46276746300d76166ce02feff97b5aButton" type="button" class="bg-blue-500 hover:bg-blue-700 text-white text-xs font-bold py-2 px-4 rounded btn-sm">
     UHD</button>
 
 <script>
-    document.getElementById('eecb94cda158af9773e9047282796ee9Button').addEventListener('click', () => {
+    document.getElementById('2e46276746300d76166ce02feff97b5aButton').addEventListener('click', () => {
         document.getElementById("width").value = 3840;
         document.getElementById("height").value = 2160;
     });
@@ -127,17 +127,17 @@
                         <div class="border-r">
                             <div class="flex items-center">
                                 <h4 class="font-semibold mb-2">Minimum distance</h4>
-                                <button data-modal-target="b12eb676d7bd17ef411a32d2c1e9ce1eModal" data-modal-toggle="b12eb676d7bd17ef411a32d2c1e9ce1eModal" class="mb-4 mx-1 focus:outline-none" type="button">
+                                <button data-modal-target="7504011d88509151bd264828112a18caModal" data-modal-toggle="7504011d88509151bd264828112a18caModal" class="mb-4 mx-1 focus:outline-none" type="button">
     <i class="text-sm fa-solid fa-circle-info text-blue-500"></i>
 </button>
 
-<div id="b12eb676d7bd17ef411a32d2c1e9ce1eModal" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full justify-center items-center">
+<div id="7504011d88509151bd264828112a18caModal" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full justify-center items-center">
     <div class="relative w-full max-w-2xl max-h-full">
         <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
             <div class="flex border-b pb-2 items-start justify-between px-4 pt-4 rounded-t dark:border-gray-600">
                 <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
                     Minimum distance                </h3>
-                <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="b12eb676d7bd17ef411a32d2c1e9ce1eModal">
+                <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="7504011d88509151bd264828112a18caModal">
                     <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"></path>
                     </svg>
@@ -197,17 +197,17 @@
                         <div class="border-r">
                             <div class="flex items-center">
                                 <h4 class="font-semibold mb-2">Maximum distance</h4>
-                                <button data-modal-target="5431c245a62cf796ae986cced325d36dModal" data-modal-toggle="5431c245a62cf796ae986cced325d36dModal" class="mb-4 mx-1 focus:outline-none" type="button">
+                                <button data-modal-target="4f6607099e5c33a208a41ca93c58572fModal" data-modal-toggle="4f6607099e5c33a208a41ca93c58572fModal" class="mb-4 mx-1 focus:outline-none" type="button">
     <i class="text-sm fa-solid fa-circle-info text-blue-500"></i>
 </button>
 
-<div id="5431c245a62cf796ae986cced325d36dModal" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full justify-center items-center">
+<div id="4f6607099e5c33a208a41ca93c58572fModal" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full justify-center items-center">
     <div class="relative w-full max-w-2xl max-h-full">
         <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
             <div class="flex border-b pb-2 items-start justify-between px-4 pt-4 rounded-t dark:border-gray-600">
                 <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
                     Maximum distance                </h3>
-                <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="5431c245a62cf796ae986cced325d36dModal">
+                <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="4f6607099e5c33a208a41ca93c58572fModal">
                     <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"></path>
                     </svg>
@@ -267,17 +267,17 @@
                         <div>
                             <div class="flex items-center">
                                 <h4 class="font-semibold mb-2">Visual Acuity distance</h4>
-                                <button data-modal-target="e7f8eb3c9a9f08b467dfb063b6fe1e53Modal" data-modal-toggle="e7f8eb3c9a9f08b467dfb063b6fe1e53Modal" class="mb-4 mx-1 focus:outline-none" type="button">
+                                <button data-modal-target="bc5aa270409c69bf56ce66ddeb5dc6d1Modal" data-modal-toggle="bc5aa270409c69bf56ce66ddeb5dc6d1Modal" class="mb-4 mx-1 focus:outline-none" type="button">
     <i class="text-sm fa-solid fa-circle-info text-blue-500"></i>
 </button>
 
-<div id="e7f8eb3c9a9f08b467dfb063b6fe1e53Modal" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full justify-center items-center">
+<div id="bc5aa270409c69bf56ce66ddeb5dc6d1Modal" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full justify-center items-center">
     <div class="relative w-full max-w-2xl max-h-full">
         <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
             <div class="flex border-b pb-2 items-start justify-between px-4 pt-4 rounded-t dark:border-gray-600">
                 <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
                     Visual Acuity distance                </h3>
-                <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="e7f8eb3c9a9f08b467dfb063b6fe1e53Modal">
+                <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="bc5aa270409c69bf56ce66ddeb5dc6d1Modal">
                     <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"></path>
                     </svg>
@@ -340,8 +340,15 @@
             <small>
                 It is not recommended to use this information for commercial purposes.
             </small>
-            
         </div>
+    </div>
+    <div class="text-center mt-12">
+        <a href="https://github.com/iJosiasCastro/screen-viewing-distance-calculator">
+            <img class="w-8 mx-auto" src="./index_files/github-mark.svg" alt="GitHub">
+            <span>
+                Star the project on GitHub
+            </span>
+        </a>
     </div>
     <button id="guideModalButton" data-modal-target="guideModal" data-modal-toggle="guideModal" hidden="" type="button"></button>
 
