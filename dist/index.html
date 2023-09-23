@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<!-- saved from url=(0031)http://localhost:3000/index.php -->
+<html lang="en"><style class="__REQUESTLY__SCRIPT">
+.jw-text-track-cue, .plyr__caption {
+    user-select: text !important; pointer-events: all !important;
+}
+.plyr__poster, .plyr__video-wrapper{
+    user-select: none !important;
+    pointer-events: none !important;
+}
+</style><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Screen Viewing Distance Calculator</title>
+    <link rel="stylesheet" href="./index_files/flowbite.min.css">
+    <link rel="stylesheet" href="./index_files/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="./index_files/tailwind.min.css">
+    <link rel="stylesheet" href="./index_files/styles.css">
+    <link rel="icon" href="http://localhost:3000/public/favicon.ico" type="image/x-icon">
+    <script src="./index_files/sitingDistanceGraph.js.download"></script>    
+</head> 
+<body class="bg-gray-100 py-8">
+    <h1 class="text-2xl font-semibold mb-4 px-2 mx-auto max-w-4xl">Screen Viewing Distance Calculator</h1>
+    <div class="container mx-auto max-w-4xl bg-white p-8 rounded shadow-lg">
+        <div id="calculatorSection">
+            <form id="calculatorSection" class="space-y-4" onsubmit="event.preventDefault(); calculate();">
+    <div class="flex flex-wrap gap-2">
+        
+<button id="44d4c576670a383797fe2e8ba51485a4Button" type="button" class="bg-blue-500 hover:bg-blue-700 text-white text-xs font-bold py-2 px-4 rounded btn-sm">
+    HD</button>
+
+<script>
+    document.getElementById('44d4c576670a383797fe2e8ba51485a4Button').addEventListener('click', () => {
+        document.getElementById("width").value = 1366;
+        document.getElementById("height").value = 768;
+    });
+</script>
+<button id="af3936dd8de62725d1e05942323638d9Button" type="button" class="bg-blue-500 hover:bg-blue-700 text-white text-xs font-bold py-2 px-4 rounded btn-sm">
+    HD+</button>
+
+<script>
+    document.getElementById('af3936dd8de62725d1e05942323638d9Button').addEventListener('click', () => {
+        document.getElementById("width").value = 1699;
+        document.getElementById("height").value = 900;
+    });
+</script>
+<button id="82e292e1d88d79582b7b39e318c43c7eButton" type="button" class="bg-blue-500 hover:bg-blue-700 text-white text-xs font-bold py-2 px-4 rounded btn-sm">
+    FHD</button>
+
+<script>
+    document.getElementById('82e292e1d88d79582b7b39e318c43c7eButton').addEventListener('click', () => {
+        document.getElementById("width").value = 1920;
+        document.getElementById("height").value = 1080;
+    });
+</script>
+<button id="89fbd6dce3af5ba1430faddb82c6ff8bButton" type="button" class="bg-blue-500 hover:bg-blue-700 text-white text-xs font-bold py-2 px-4 rounded btn-sm">
+    WQHD</button>
+
+<script>
+    document.getElementById('89fbd6dce3af5ba1430faddb82c6ff8bButton').addEventListener('click', () => {
+        document.getElementById("width").value = 2560;
+        document.getElementById("height").value = 1440;
+    });
+</script>
+<button id="729052b4ce7891b6a0dcf5e17b450d5eButton" type="button" class="bg-blue-500 hover:bg-blue-700 text-white text-xs font-bold py-2 px-4 rounded btn-sm">
+    WQXGA</button>
+
+<script>
+    document.getElementById('729052b4ce7891b6a0dcf5e17b450d5eButton').addEventListener('click', () => {
+        document.getElementById("width").value = 2560;
+        document.getElementById("height").value = 1600;
+    });
+</script>
+<button id="25a00cea7e7c9a79f99c69dbe0bc0a94Button" type="button" class="bg-blue-500 hover:bg-blue-700 text-white text-xs font-bold py-2 px-4 rounded btn-sm">
+    QHD</button>
+
+<script>
+    document.getElementById('25a00cea7e7c9a79f99c69dbe0bc0a94Button').addEventListener('click', () => {
+        document.getElementById("width").value = 3200;
+        document.getElementById("height").value = 1800;
+    });
+</script>
+<button id="eecb94cda158af9773e9047282796ee9Button" type="button" class="bg-blue-500 hover:bg-blue-700 text-white text-xs font-bold py-2 px-4 rounded btn-sm">
+    UHD</button>
+
+<script>
+    document.getElementById('eecb94cda158af9773e9047282796ee9Button').addEventListener('click', () => {
+        document.getElementById("width").value = 3840;
+        document.getElementById("height").value = 2160;
+    });
+</script>    </div>
+    <div>
+        <label for="width" class="block text-sm font-medium text-gray-700">Width</label>
+        <input required="" type="number" id="width" name="width" value="1366" class="border border-gray-400 rounded px-3 py-2 w-full" placeholder="Enter width in pixels">
+    </div>
+    <div>
+        <label for="height" class="block text-sm font-medium text-gray-700">Height</label>
+        <input required="" type="number" id="height" name="height" value="671" class="border border-gray-400 rounded px-3 py-2 w-full" placeholder="Enter height in pixels">
+    </div>
+    <div>
+        <label for="diagonal" class="block text-sm font-medium text-gray-700">Diagonal</label>
+        <div class="relative">
+            <input value="24" type="number" step="0.1" id="diagonal" name="diagonal" class="border border-gray-400 rounded px-3 py-2 w-full appearance-none" placeholder="Enter diagonal length">
+            <select required="" id="unit" name="unit" class="border border-gray-400 border-l-0 rounded-r w-24 absolute inset-y-0 right-0 px-2 py-2 bg-transparent text-gray-500">
+                <option value="inches">inches</option>
+                <option value="cm">cm</option>
+            </select>
+        </div>
+    </div>
+    <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-4 py-2 rounded">Calculate</button>
+</form>        </div>
+        <div id="resultSection" style="display: none;">
+            <div class="flex flex-wrap gap-3">
+                <button class="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-3 py-2 rounded flex items-center" onclick="resetCalculator()">
+                    <i class="fas fa-chevron-left mr-2"></i>
+                    Back to Calculator
+                </button>
+                <button class="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-3 py-2 rounded flex items-center" onclick="calculate()">
+                    <i class="fas fa-refresh mr-2"></i>
+                    Refresh results
+                </button>
+            </div>
+            <div class="overflow-x-auto max-w-full">
+                <div style="min-width: 700px;">
+                    <div id="resultSpecs" class="mt-4 flex w-full"></div>
+                    <div class="grid grid-cols-3 gap-4 my-5 py-3 border-t border-b">
+                        <div class="border-r">
+                            <div class="flex items-center">
+                                <h4 class="font-semibold mb-2">Minimum distance</h4>
+                                <button data-modal-target="b12eb676d7bd17ef411a32d2c1e9ce1eModal" data-modal-toggle="b12eb676d7bd17ef411a32d2c1e9ce1eModal" class="mb-4 mx-1 focus:outline-none" type="button">
+    <i class="text-sm fa-solid fa-circle-info text-blue-500"></i>
+</button>
+
+<div id="b12eb676d7bd17ef411a32d2c1e9ce1eModal" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full justify-center items-center">
+    <div class="relative w-full max-w-2xl max-h-full">
+        <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+            <div class="flex border-b pb-2 items-start justify-between px-4 pt-4 rounded-t dark:border-gray-600">
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+                    Minimum distance                </h3>
+                <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="b12eb676d7bd17ef411a32d2c1e9ce1eModal">
+                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"></path>
+                    </svg>
+                    <span class="sr-only">Close modal</span>
+                </button>
+            </div>
+            <div class="px-4 pt-2 pb-6 space-y-6">
+                <div id="note-107-1"><strong>The audience should sit&nbsp;at least this distance from the screen</strong>.<br> This is the <em>Shortest Recommended Viewing Distance</em> based on Field-of-View being too wide: This distance is calculated&nbsp;on the peripheral vision field&nbsp;of view of the human eye. The average FOV&nbsp;width for the human eye is 140 degrees. The rule is that if the viewer sits any closer than this distance to the screen and looks at one side of the screen, they will not be able to see the other side of the screen with their peripheral vision. This equates to a 70-degree field of view when the person is looking at the center of the screen.</div>            </div>
+        </div>
+    </div>
+</div>
+                            </div>
+                            <svg id="minimumDistance" xmlns="http://www.w3.org/2000/svg" viewBox="7.35 0 22.5 80" onload="makeDraggable(evt, &#39;minimumDistanceData&#39;)" width="100%">
+    <g>
+        <text x="15" y="1" text-anchor="middle" font-size="1" class="static select-none screenSizeText">7.0" (17.7cm)</text>
+        <rect class="shape screen" x="7.5" y="1.5" width="15" height="1"></rect>
+    </g>
+    <g>
+        <circle cx="15.00001" cy="10" r="1.5" class="draggable shape circle"></circle>
+        <text x="15" y="12.9" text-anchor="middle" font-size="1" class="static select-none angle">104.6 degree viewing angle</text>
+    </g>
+    <g>
+        <line class="connection cxn" x1="15.00001" y1="8.4" x2="22.5" y2="2.6"></line>
+        <line class="connection cxn2" x1="15.00001" y1="8.4" x2="7.5" y2="2.5999999999999996"></line>
+    </g>
+    <g>
+        <line class="ruleMainLine" x1="23" y1="2.5" x2="23" y2="8.4" stroke="black" stroke-width="0.1"></line>
+
+        <line x1="22.5" y1="2.5" x2="23.5" y2="2.5" stroke="black" stroke-width="0.1"></line>
+
+        <line class="ruleBottomLine" x1="22.5" y1="8.4" x2="23.5" y2="8.4" stroke="black" stroke-width="0.1"></line>
+
+        <text x="23.5" y="5.800000000000001" font-size="1" class="static select-none ruleText">
+            1.40m (4.6ft)
+        </text>
+    </g>
+
+</svg>
+
+<script>
+    getElement = (className) => {
+        return document.querySelector('#minimumDistance' + ' .' + className);
+    };
+    var minimumDistanceData = {
+        circle: getElement('circle'),
+        screen: getElement('screen'),
+        cxn: getElement('cxn'),
+        cxn2: getElement('cxn2'),
+        angle: getElement('angle'),
+        ruleMainLine: getElement('ruleMainLine'),
+        ruleBottomLine: getElement('ruleBottomLine'),
+        ruleText: getElement('ruleText')
+    } 
+
+    updateGraph('minimumDistanceData');
+</script>                        </div>
+                        <div class="border-r">
+                            <div class="flex items-center">
+                                <h4 class="font-semibold mb-2">Maximum distance</h4>
+                                <button data-modal-target="5431c245a62cf796ae986cced325d36dModal" data-modal-toggle="5431c245a62cf796ae986cced325d36dModal" class="mb-4 mx-1 focus:outline-none" type="button">
+    <i class="text-sm fa-solid fa-circle-info text-blue-500"></i>
+</button>
+
+<div id="5431c245a62cf796ae986cced325d36dModal" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full justify-center items-center">
+    <div class="relative w-full max-w-2xl max-h-full">
+        <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+            <div class="flex border-b pb-2 items-start justify-between px-4 pt-4 rounded-t dark:border-gray-600">
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+                    Maximum distance                </h3>
+                <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="5431c245a62cf796ae986cced325d36dModal">
+                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"></path>
+                    </svg>
+                    <span class="sr-only">Close modal</span>
+                </button>
+            </div>
+            <div class="px-4 pt-2 pb-6 space-y-6">
+                <div><strong>The audience should sit at most&nbsp;this far&nbsp;from&nbsp;the screen</strong>. <br> This is based on THX&nbsp;<em>Longest Recommended</em> and <em>Longest Allowable</em> viewing distances: THX publishes standards to which movie theaters must adhere to receive THX certification. &nbsp;THX recommends that the back row of seats in a theater have a 36 degree or greater viewing angle and requires a minimum of a 26 degree or greater viewing angle to receive certification. (Note: sitting closer to the screen results in a wider field-of-view.)</div>            </div>
+        </div>
+    </div>
+</div>
+                            </div>
+                            <svg id="maximumDistance" xmlns="http://www.w3.org/2000/svg" viewBox="7.35 0 22.5 80" onload="makeDraggable(evt, &#39;maximumDistanceData&#39;)" width="100%">
+    <g>
+        <text x="15" y="1" text-anchor="middle" font-size="1" class="static select-none screenSizeText">7.0" (17.7cm)</text>
+        <rect class="shape screen" x="7.5" y="1.5" width="15" height="1"></rect>
+    </g>
+    <g>
+        <circle cx="15.00001" cy="10" r="1.5" class="draggable shape circle"></circle>
+        <text x="15" y="12.9" text-anchor="middle" font-size="1" class="static select-none angle">104.6 degree viewing angle</text>
+    </g>
+    <g>
+        <line class="connection cxn" x1="15.00001" y1="8.4" x2="22.5" y2="2.6"></line>
+        <line class="connection cxn2" x1="15.00001" y1="8.4" x2="7.5" y2="2.5999999999999996"></line>
+    </g>
+    <g>
+        <line class="ruleMainLine" x1="23" y1="2.5" x2="23" y2="8.4" stroke="black" stroke-width="0.1"></line>
+
+        <line x1="22.5" y1="2.5" x2="23.5" y2="2.5" stroke="black" stroke-width="0.1"></line>
+
+        <line class="ruleBottomLine" x1="22.5" y1="8.4" x2="23.5" y2="8.4" stroke="black" stroke-width="0.1"></line>
+
+        <text x="23.5" y="5.800000000000001" font-size="1" class="static select-none ruleText">
+            1.40m (4.6ft)
+        </text>
+    </g>
+
+</svg>
+
+<script>
+    getElement = (className) => {
+        return document.querySelector('#maximumDistance' + ' .' + className);
+    };
+    var maximumDistanceData = {
+        circle: getElement('circle'),
+        screen: getElement('screen'),
+        cxn: getElement('cxn'),
+        cxn2: getElement('cxn2'),
+        angle: getElement('angle'),
+        ruleMainLine: getElement('ruleMainLine'),
+        ruleBottomLine: getElement('ruleBottomLine'),
+        ruleText: getElement('ruleText')
+    } 
+
+    updateGraph('maximumDistanceData');
+</script>                        </div>
+                        <div>
+                            <div class="flex items-center">
+                                <h4 class="font-semibold mb-2">Visual Acuity distance</h4>
+                                <button data-modal-target="e7f8eb3c9a9f08b467dfb063b6fe1e53Modal" data-modal-toggle="e7f8eb3c9a9f08b467dfb063b6fe1e53Modal" class="mb-4 mx-1 focus:outline-none" type="button">
+    <i class="text-sm fa-solid fa-circle-info text-blue-500"></i>
+</button>
+
+<div id="e7f8eb3c9a9f08b467dfb063b6fe1e53Modal" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full justify-center items-center">
+    <div class="relative w-full max-w-2xl max-h-full">
+        <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+            <div class="flex border-b pb-2 items-start justify-between px-4 pt-4 rounded-t dark:border-gray-600">
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+                    Visual Acuity distance                </h3>
+                <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="e7f8eb3c9a9f08b467dfb063b6fe1e53Modal">
+                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"></path>
+                    </svg>
+                    <span class="sr-only">Close modal</span>
+                </button>
+            </div>
+            <div class="px-4 pt-2 pb-6 space-y-6">
+                <div><strong>The Visual Acuity Distance</strong> based on <em>Visual Acuity.&nbsp;</em><br> This distance is calculated based on the reference resolving power of the eyes. The human eye with 20/20 vision can detect or resolve details as small as 1/60th of a degree of arc. This distance represents the point beyond which some details in the picture are no longer able to be resolved, so pixels begin to blend together. Closer to the screen than this may result in the need for higher resolution display. This value should&nbsp;be lowered if visual acuity is worst then 20/20, raised if visual acuity is better.</div>            </div>
+        </div>
+    </div>
+</div>
+                            </div>
+                            <svg id="visualAcuityDistance" xmlns="http://www.w3.org/2000/svg" viewBox="7.35 0 22.5 80" onload="makeDraggable(evt, &#39;visualAcuityDistanceData&#39;)" width="100%">
+    <g>
+        <text x="15" y="1" text-anchor="middle" font-size="1" class="static select-none screenSizeText">7.0" (17.7cm)</text>
+        <rect class="shape screen" x="7.5" y="1.5" width="15" height="1"></rect>
+    </g>
+    <g>
+        <circle cx="15.00001" cy="10" r="1.5" class="draggable shape circle"></circle>
+        <text x="15" y="12.9" text-anchor="middle" font-size="1" class="static select-none angle">104.6 degree viewing angle</text>
+    </g>
+    <g>
+        <line class="connection cxn" x1="15.00001" y1="8.4" x2="22.5" y2="2.6"></line>
+        <line class="connection cxn2" x1="15.00001" y1="8.4" x2="7.5" y2="2.5999999999999996"></line>
+    </g>
+    <g>
+        <line class="ruleMainLine" x1="23" y1="2.5" x2="23" y2="8.4" stroke="black" stroke-width="0.1"></line>
+
+        <line x1="22.5" y1="2.5" x2="23.5" y2="2.5" stroke="black" stroke-width="0.1"></line>
+
+        <line class="ruleBottomLine" x1="22.5" y1="8.4" x2="23.5" y2="8.4" stroke="black" stroke-width="0.1"></line>
+
+        <text x="23.5" y="5.800000000000001" font-size="1" class="static select-none ruleText">
+            1.40m (4.6ft)
+        </text>
+    </g>
+
+</svg>
+
+<script>
+    getElement = (className) => {
+        return document.querySelector('#visualAcuityDistance' + ' .' + className);
+    };
+    var visualAcuityDistanceData = {
+        circle: getElement('circle'),
+        screen: getElement('screen'),
+        cxn: getElement('cxn'),
+        cxn2: getElement('cxn2'),
+        angle: getElement('angle'),
+        ruleMainLine: getElement('ruleMainLine'),
+        ruleBottomLine: getElement('ruleBottomLine'),
+        ruleText: getElement('ruleText')
+    } 
+
+    updateGraph('visualAcuityDistanceData');
+</script>                        </div>
+                    </div>
+                </div>
+            </div>
+            <small>
+                The information is not 100% accurate. It is not recommended for commercial purposes.
+            </small>
+            
+        </div>
+    </div>
+    <button id="guideModalButton" data-modal-target="guideModal" data-modal-toggle="guideModal" hidden="" type="button"></button>
+
+<div id="guideModal" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full justify-center items-center">
+    <div class="relative w-full max-w-2xl max-h-full">
+        <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+            <div class="flex border-b pb-2 items-start justify-between px-4 pt-4 rounded-t dark:border-gray-600">
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+                    Guide
+                </h3>
+                <button id="closeGuideModalButton" type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="guideModal">
+                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"></path>
+                    </svg>
+                    <span class="sr-only">Close modal</span>
+                </button>
+            </div>
+            <div class="px-4 pt-2 pb-6 space-y-6">
+                <p>Drag the person circle within the graph to change the distance:</p>
+                <img src="./index_files/image.png" width="300px" alt="Drag to change distance in the graph">
+                
+                <p>If you want to reset the graph to its default view, simply click the refresh button:</p>
+                <img src="./index_files/image2.png" width="150px" alt="Refresh button">
+            </div>
+            <div class="flex items-center justify-between p-6 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600">
+                <div>
+                    <input id="guideModalNoShowAgain" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-200 border-gray-500 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                    <label for="guideModalNoShowAgain" class="ml-1 text-sm font-medium text-gray-900 dark:text-gray-300">Don't show this again</label>
+                </div>
+                <button id="closeGuideModalOkayButton" onclick="closeGuideModal()" type="button" class="text-white bg-blue-500 hover:bg-blue-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Okay</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    
+    function showGuideModal(){
+        const guideModalNoShowAgain = document.getElementById('guideModalNoShowAgain');
+        const guideModalButton = document.getElementById('guideModalButton');
+
+        if (localStorage.getItem('hideGuideModal') !== 'true') {
+            guideModalButton.click();
+        }
+    }
+
+    function closeGuideModal(){
+        const closeGuideModalButton = document.getElementById('closeGuideModalButton');
+        const guideModalNoShowAgain = document.getElementById('guideModalNoShowAgain');
+        
+        if (guideModalNoShowAgain.checked) {
+            localStorage.setItem('hideGuideModal', 'true');
+        }
+        
+        closeGuideModalButton.click();
+    }
+
+</script>    <script src="./index_files/calculate.js.download"></script>    
+    <script src="./index_files/flowbite.min.js.download"></script>    
+
+
+
+<deepl-input-controller><template shadowrootmode="open"><link rel="stylesheet" href="chrome-extension://cofdbpoegempjloogbagkncekinflcnj/build/content.css"><div><div class="dl-input-translation-container svelte-ju4595"><div></div></div></div></template></deepl-input-controller></body></html>

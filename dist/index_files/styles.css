@@ -1,0 +1,30 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.static {
+    cursor: not-allowed;
+}
+
+.shape{
+    fill: #007bff;
+    fill-opacity: 0.1;
+    stroke: #007bff;
+    stroke-width: 0.2;
+}
+
+.draggable {
+    cursor: move;
+}
+
+.connection {
+    stroke-width: 0.1;
+    stroke: black;
+}
