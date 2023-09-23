@@ -91,7 +91,7 @@ function calculate() {
 
 function resetCalculator() {
   document.getElementById("width").value = "1366";
-  document.getElementById("height").value = "671";
+  document.getElementById("height").value = "768";
   document.getElementById("diagonal").value = "24";
   document.getElementById("unit").value = "inches";
 

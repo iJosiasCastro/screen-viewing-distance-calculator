@@ -51,7 +51,7 @@
     </div>
     <div>
         <label for="height" class="block text-sm font-medium text-gray-700">Height</label>
-        <input required type="number" id="height" name="height" value="671" class="border border-gray-400 rounded px-3 py-2 w-full" placeholder="Enter height in pixels" required>
+        <input required type="number" id="height" name="height" value="768" class="border border-gray-400 rounded px-3 py-2 w-full" placeholder="Enter height in pixels" required>
     </div>
     <div>
         <label for="diagonal" class="block text-sm font-medium text-gray-700">Diagonal</label>
