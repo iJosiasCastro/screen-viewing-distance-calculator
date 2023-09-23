@@ -1,4 +1,4 @@
-<svg id="<?php echo $id ?>" xmlns="http://www.w3.org/2000/svg" viewBox="7.35 0 22.5 50" onload="makeDraggable(evt, '<?php echo $id ?>Data')" width="100%">
+<svg id="<?php echo $id ?>" xmlns="http://www.w3.org/2000/svg" viewBox="7.35 0 22.5 80" onload="makeDraggable(evt, '<?php echo $id ?>Data')" width="100%">
     <g>
         <text x="15" y="1" text-anchor="middle" font-size="1" class="static select-none screenSizeText">7.0" (17.7cm)</text>
         <rect class="shape screen" x="7.5" y="1.5" width="15" height="1" />

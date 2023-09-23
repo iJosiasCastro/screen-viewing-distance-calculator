@@ -1,6 +1,6 @@
 var limitY = {
-    top: '4.7',
-    bottom: '46.5'
+    top: 4.119,
+    bottom: 80-4.119
 };
 var circle = null;
 var screen = null;
@@ -12,41 +12,8 @@ var ruleBottomLine = null;
 var ruleText = null;
 var screenSize = null;
 
-function createGraph(graphName, graphAngle, graphScreenSize){
-    let screenSizeText = document.querySelector('#' + graphName + ' .screenSizeText');
-    screenSizeText.textContent = `${graphScreenSize[0].toFixed(1)}" (${graphScreenSize[1].toFixed(1)}cm)`
-
-    let data = eval(`${graphName}Data`);
-    circle = data.circle;
-    data.screenSize = graphScreenSize;
-
-    // 1. Calculate the distance
-    const angleInRadians = (Math.floor(graphAngle) * Math.PI) / 180;
-    const distanceCm = graphScreenSize[1] / (2 * Math.tan(angleInRadians / 2));
-    const distanceMeters = distanceCm / 100;
-    
-    // 2. Tranform the distance to a cy
-    // Constants
-    const x1 = 0.02393479416298604;
-    const y1 = 4.766355140186917;
-
-    const x2 = 1.5515263066352947;
-    const y2 = 46.421895861148194;
-
-    // Calculate the slope (m)
-    const m = (y2 - y1) / (x2 - x1);
-
-    // Calculate the y-intercept (b)
-    const b = y1 - m * x1;
-
-    const calculatedY = m * distanceMeters + b;
-
-    // 3. Update the cy value
-
-    circle.setAttributeNS(null, 'cy', calculatedY);
-
-    updateGraph(`${graphName}Data`);
-}
+var angleDegrees = null;
+var distance = null;
 
 function updateGraph(dataVarName){
     let data = eval(dataVarName);
@@ -140,24 +107,21 @@ function calculateAngle() {
     var angleRadians = Math.acos(cosineAngle);
 
     // Convert the angle to degrees
-    var angleDegrees = (angleRadians * 180) / Math.PI;
-    if(angleDegrees > 170)
-        angleDegrees = 170;
-
-    if(angleDegrees < 10)
-        angleDegrees = 10;
+    angleDegrees = (angleRadians * 180) / Math.PI;
 
     angle.setAttributeNS(null, 'y', cxn_y1 + 4.5);
-    angle.textContent = Math.floor(angleDegrees) + ' degree viewing angle';
+    angle.textContent = angleDegrees.toFixed(1) + ' degree viewing angle';
 
     // Calculate distance
     if(screenSize){
-        const angleInRadians = (Math.floor(angleDegrees) * Math.PI) / 180;
+        const angleInRadians = (angleDegrees.toFixed(1) * Math.PI) / 180;
         const distanceCm = screenSize[1] / (2 * Math.tan(angleInRadians / 2));
         const distanceMeters = distanceCm / 100;
         const distanceFeet = distanceCm / 30.48;
 
         ruleText.textContent = `${distanceMeters.toFixed(2)}m (${distanceFeet.toFixed(1)}ft)`;
+
+        distance = distanceMeters;
     }
 
 
@@ -214,4 +178,54 @@ function makeDraggable(evt, varName) {
     function endDrag(evt) {
         selectedElement = null;
     }
+}
+
+function createGraph(graphName, graphAngle, graphScreenSize){
+    let screenSizeText = document.querySelector('#' + graphName + ' .screenSizeText');
+    screenSizeText.textContent = `${graphScreenSize[0].toFixed(1)}" (${graphScreenSize[1].toFixed(1)}cm)`
+
+    let data = eval(`${graphName}Data`);
+    circle = data.circle;
+    data.screenSize = graphScreenSize;
+
+    var distanceLimit = {
+        top: null,
+        bottom: null,
+    }
+
+    // Adjust the graph
+    graphAngle-=0.2;
+
+    // Calculate top limit
+    circle.setAttributeNS(null, 'cy', limitY.top);
+    updateGraph(`${graphName}Data`);
+    distanceLimit.top = distance;
+
+    // Calculate bottom limit
+    circle.setAttributeNS(null, 'cy', limitY.bottom);
+    updateGraph(`${graphName}Data`);
+    distanceLimit.bottom = distance;
+
+    // Calculate the distance with the angle
+    const angleInRadians = (graphAngle * Math.PI) / 180;
+    const distanceCm = graphScreenSize[1] / (2 * Math.tan(angleInRadians / 2));
+    const distanceMeters = distanceCm / 100;
+
+    const x1 = distanceLimit.top;
+    const y1 = limitY.top;
+
+    const x2 = distanceLimit.bottom;
+    const y2 = limitY.bottom;
+
+    // Calculate the slope (m)
+    const m = (y2 - y1) / (x2 - x1);
+
+    // Calculate the y-intercept (b)
+    const b = y1 - m * x1;
+
+    const calculatedY = m * distanceMeters + b;
+
+    // 3. Update the cy value
+    circle.setAttributeNS(null, 'cy', calculatedY);
+    updateGraph(`${graphName}Data`);
 }
