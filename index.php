@@ -82,6 +82,71 @@
         </a>
     </div>
     <?php include('./src/components/guideModal.php') ?>
+    <?php
+        $PPDModal = true;
+        $modalTitle = "Pixel Per Degree (PPD)";
+        $modalContent = '
+            <div>
+                <p>Pixel Per Degree (PPD) is a metric that represents the number of pixels a screen can display within one degree of your field of vision. The higher the PPD value, the more pixels are packed into each degree of your visual field, resulting in sharper and more detailed images. Conversely, a lower PPD indicates a lower level of detail and clarity in the displayed content.</p>
+                <br>
+                <p>Here are some examples of PPD values and their corresponding levels of visual acuity:</p>
+                <div class="max-w-full overflow-x-auto">
+                    <table style="min-width: 400px;"  class="w-full bg-white border mt-4">
+                        <thead class="bg-blue-500 text-white text-left">
+                            <tr>
+                                <th class="py-2 px-4">PPD</th>
+                                <th class="py-2 px-4">Vision</th>
+                                <th class="py-2 px-4">Comment</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b border-gray-200">
+                                <td class="py-2 px-4">30 PPD</td>
+                                <td class="py-2 px-4">20/40</td>
+                                <td class="py-2 px-4">Poor vision</td>
+                            </tr>
+                            <tr class="border-b border-gray-200">
+                                <td class="py-2 px-4">57 PPD</td>
+                                <td class="py-2 px-4">20/21</td>
+                                <td class="py-2 px-4">Apple Retina</td>
+                            </tr>
+                            <tr class="border-b border-gray-200">
+                                <td class="py-2 px-4">60 PPD</td>
+                                <td class="py-2 px-4">20/20</td>
+                                <td class="py-2 px-4">Normal vision</td>
+                            </tr>
+                            <tr class="border-b border-gray-200">
+                                <td class="py-2 px-4">80 PPD</td>
+                                <td class="py-2 px-4">20/15</td>
+                                <td class="py-2 px-4">Average vision</td>
+                            </tr>
+                            <tr class="border-b border-gray-200">
+                                <td class="py-2 px-4">120 PPD</td>
+                                <td class="py-2 px-4">20/10</td>
+                                <td class="py-2 px-4">Practical upper limit of visual acuity</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 px-4">150 PPD</td>
+                                <td class="py-2 px-4">20/8</td>
+                                <td class="py-2 px-4">Theoretical upper limit of visual acuity</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        ';
+
+        include('./src/components/infoModal.php');
+    ?>
+    <script>
+        const buttons = document.querySelectorAll('.PPDModalButton');
+
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                document.getElementById('PPDModalButton').click();
+            });
+        });
+    </script>
     <script src="/src/script/calculate.js"></script>    
     <script src="/public/js/flowbite.min.js"></script>    
 </body>

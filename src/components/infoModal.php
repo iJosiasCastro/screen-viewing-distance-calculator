@@ -1,5 +1,11 @@
-<?php $modalId = bin2hex(random_bytes(16)); ?>
-<button data-modal-target="<?php echo $modalId ?>Modal" data-modal-toggle="<?php echo $modalId ?>Modal" class="mb-4 mx-1 focus:outline-none" type="button">
+<?php
+if (isset($PPDModal) && $PPDModal) {
+    $modalId = "PPD";
+} else {
+    $modalId = bin2hex(random_bytes(16)); 
+}
+?>
+<button data-modal-target="<?php echo $modalId ?>Modal" data-modal-toggle="<?php echo $modalId ?>Modal" id="<?php echo $modalId ?>ModalButton" class="mb-4 mx-1 focus:outline-none cursor-pointer draggable" type="button">
     <i class="text-sm fa-solid fa-circle-info text-blue-500"></i>
 </button>
 

@@ -28,3 +28,11 @@ input[type=number] {
     stroke-width: 0.1;
     stroke: black;
 }
+
+svg .icon {
+  font-family: FontAwesome;
+}
+
+#PPDModalButton{
+  display: none;
+}

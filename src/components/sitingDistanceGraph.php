@@ -20,11 +20,12 @@
 
         <line class="ruleBottomLine" x1="22.5" y1="20" x2="23.5" y2="20" stroke="black" stroke-width="0.1" />
 
-        <text x="23.5" y="6" font-size="1" class="static select-none ruleText">
-            1.40m (4.6ft)
+        <text x="23.6" y="6" font-size="1" class="static select-none ruleText"></text>
+        <text x="23.6" y="6" font-size="1" class="static select-none font-semibold PPDText">
+            <tspan class="PPDTextContent">19.5 PPD</tspan>
+            <tspan  class="icon PPDModalButton" style="fill: #4299e1; cursor: pointer;" font-size="1">&#xf05a;</tspan>
         </text>
     </g>
-
 </svg>
 
 <script>
@@ -39,7 +40,9 @@
         angle: getElement('angle'),
         ruleMainLine: getElement('ruleMainLine'),
         ruleBottomLine: getElement('ruleBottomLine'),
-        ruleText: getElement('ruleText')
+        ruleText: getElement('ruleText'),
+        PPDText: getElement('PPDText'),
+        PPDTextContent: getElement('PPDTextContent')
     } 
 
     updateGraph('<?php echo $id ?>Data');
