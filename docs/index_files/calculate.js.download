@@ -41,14 +41,20 @@ function calculate() {
   createGraph("minimumDistance", minimumDistanceAngle, [
     screenWidthInches,
     screenWidthCm,
+    width,
+    height
   ]);
   createGraph("maximumDistance", maximumDistanceAngle, [
     screenWidthInches,
     screenWidthCm,
+    width,
+    height
   ]);
   createGraph("visualAcuityDistance", visualAcuityDistanceAngle, [
     screenWidthInches,
     screenWidthCm,
+    width,
+    height
   ]);
 
   showGuideModal();

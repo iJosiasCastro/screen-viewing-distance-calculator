@@ -13,10 +13,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Screen Viewing Distance Calculator</title>
     <link rel="stylesheet" href="./index_files/flowbite.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="icon" href="./index_files/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="./index_files/tailwind.min.css">
     <link rel="stylesheet" href="./index_files/styles.css">
+    <link rel="icon" href="./index_files/favicon.ico" type="image/x-icon">
     <script src="./index_files/sitingDistanceGraph.js.download"></script>    
 </head> 
 <body class="bg-gray-100 py-8 max-w-4xl mx-auto">
@@ -26,65 +26,65 @@
             <form id="calculatorSection" class="space-y-4" onsubmit="event.preventDefault(); calculate();">
     <div class="flex flex-wrap gap-2">
         
-<button id="6b08a39568c409a2d723b47c93f2df47Button" type="button" class="bg-blue-500 hover:bg-blue-700 text-white text-xs font-bold py-2 px-4 rounded btn-sm">
+<button id="6caa858afd6333e08875b8b68719a3d3Button" type="button" class="bg-blue-500 hover:bg-blue-700 text-white text-xs font-bold py-2 px-4 rounded btn-sm">
     HD</button>
 
 <script>
-    document.getElementById('6b08a39568c409a2d723b47c93f2df47Button').addEventListener('click', () => {
+    document.getElementById('6caa858afd6333e08875b8b68719a3d3Button').addEventListener('click', () => {
         document.getElementById("width").value = 1366;
         document.getElementById("height").value = 768;
     });
 </script>
-<button id="818dcb8664dd98ca8ae2fd2d07a5f880Button" type="button" class="bg-blue-500 hover:bg-blue-700 text-white text-xs font-bold py-2 px-4 rounded btn-sm">
+<button id="8e05e2eb4f5043706e11c5ebf0296497Button" type="button" class="bg-blue-500 hover:bg-blue-700 text-white text-xs font-bold py-2 px-4 rounded btn-sm">
     HD+</button>
 
 <script>
-    document.getElementById('818dcb8664dd98ca8ae2fd2d07a5f880Button').addEventListener('click', () => {
+    document.getElementById('8e05e2eb4f5043706e11c5ebf0296497Button').addEventListener('click', () => {
         document.getElementById("width").value = 1699;
         document.getElementById("height").value = 900;
     });
 </script>
-<button id="89081e99e1510221cd85c29f754e58ccButton" type="button" class="bg-blue-500 hover:bg-blue-700 text-white text-xs font-bold py-2 px-4 rounded btn-sm">
+<button id="132931b6dab34cf6f73c4a5b80ab031dButton" type="button" class="bg-blue-500 hover:bg-blue-700 text-white text-xs font-bold py-2 px-4 rounded btn-sm">
     FHD</button>
 
 <script>
-    document.getElementById('89081e99e1510221cd85c29f754e58ccButton').addEventListener('click', () => {
+    document.getElementById('132931b6dab34cf6f73c4a5b80ab031dButton').addEventListener('click', () => {
         document.getElementById("width").value = 1920;
         document.getElementById("height").value = 1080;
     });
 </script>
-<button id="ac7998f6d39de5273fa1d79ec93d3e0aButton" type="button" class="bg-blue-500 hover:bg-blue-700 text-white text-xs font-bold py-2 px-4 rounded btn-sm">
+<button id="8c9baecd0f921af076f5029878f2cc2eButton" type="button" class="bg-blue-500 hover:bg-blue-700 text-white text-xs font-bold py-2 px-4 rounded btn-sm">
     WQHD</button>
 
 <script>
-    document.getElementById('ac7998f6d39de5273fa1d79ec93d3e0aButton').addEventListener('click', () => {
+    document.getElementById('8c9baecd0f921af076f5029878f2cc2eButton').addEventListener('click', () => {
         document.getElementById("width").value = 2560;
         document.getElementById("height").value = 1440;
     });
 </script>
-<button id="5fb9508adfa2f512ed74af9f24134dbdButton" type="button" class="bg-blue-500 hover:bg-blue-700 text-white text-xs font-bold py-2 px-4 rounded btn-sm">
+<button id="1c1946d0565e75c5b936318beb72dbccButton" type="button" class="bg-blue-500 hover:bg-blue-700 text-white text-xs font-bold py-2 px-4 rounded btn-sm">
     WQXGA</button>
 
 <script>
-    document.getElementById('5fb9508adfa2f512ed74af9f24134dbdButton').addEventListener('click', () => {
+    document.getElementById('1c1946d0565e75c5b936318beb72dbccButton').addEventListener('click', () => {
         document.getElementById("width").value = 2560;
         document.getElementById("height").value = 1600;
     });
 </script>
-<button id="05fe317afb7295efaf1dbf0a9b08dffcButton" type="button" class="bg-blue-500 hover:bg-blue-700 text-white text-xs font-bold py-2 px-4 rounded btn-sm">
+<button id="0c79b3e7ad8620ff4816dd7aa70b0568Button" type="button" class="bg-blue-500 hover:bg-blue-700 text-white text-xs font-bold py-2 px-4 rounded btn-sm">
     QHD</button>
 
 <script>
-    document.getElementById('05fe317afb7295efaf1dbf0a9b08dffcButton').addEventListener('click', () => {
+    document.getElementById('0c79b3e7ad8620ff4816dd7aa70b0568Button').addEventListener('click', () => {
         document.getElementById("width").value = 3200;
         document.getElementById("height").value = 1800;
     });
 </script>
-<button id="2e46276746300d76166ce02feff97b5aButton" type="button" class="bg-blue-500 hover:bg-blue-700 text-white text-xs font-bold py-2 px-4 rounded btn-sm">
+<button id="b1a98e4440148c6750d3af9adc51e1d1Button" type="button" class="bg-blue-500 hover:bg-blue-700 text-white text-xs font-bold py-2 px-4 rounded btn-sm">
     UHD</button>
 
 <script>
-    document.getElementById('2e46276746300d76166ce02feff97b5aButton').addEventListener('click', () => {
+    document.getElementById('b1a98e4440148c6750d3af9adc51e1d1Button').addEventListener('click', () => {
         document.getElementById("width").value = 3840;
         document.getElementById("height").value = 2160;
     });
@@ -127,17 +127,17 @@
                         <div class="border-r">
                             <div class="flex items-center">
                                 <h4 class="font-semibold mb-2">Minimum distance</h4>
-                                <button data-modal-target="7504011d88509151bd264828112a18caModal" data-modal-toggle="7504011d88509151bd264828112a18caModal" class="mb-4 mx-1 focus:outline-none" type="button">
+                                <button data-modal-target="67c764e3356f312b1bd12dd8142f87f7Modal" data-modal-toggle="67c764e3356f312b1bd12dd8142f87f7Modal" id="67c764e3356f312b1bd12dd8142f87f7ModalButton" class="mb-4 mx-1 focus:outline-none cursor-pointer draggable" type="button">
     <i class="text-sm fa-solid fa-circle-info text-blue-500"></i>
 </button>
 
-<div id="7504011d88509151bd264828112a18caModal" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full justify-center items-center">
+<div id="67c764e3356f312b1bd12dd8142f87f7Modal" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full justify-center items-center">
     <div class="relative w-full max-w-2xl max-h-full">
         <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
             <div class="flex border-b pb-2 items-start justify-between px-4 pt-4 rounded-t dark:border-gray-600">
                 <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
                     Minimum distance                </h3>
-                <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="7504011d88509151bd264828112a18caModal">
+                <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="67c764e3356f312b1bd12dd8142f87f7Modal">
                     <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"></path>
                     </svg>
@@ -170,11 +170,12 @@
 
         <line class="ruleBottomLine" x1="22.5" y1="8.4" x2="23.5" y2="8.4" stroke="black" stroke-width="0.1"></line>
 
-        <text x="23.5" y="5.800000000000001" font-size="1" class="static select-none ruleText">
-            1.40m (4.6ft)
+        <text x="23.6" y="5.1000000000000005" font-size="1" class="static select-none ruleText"></text>
+        <text x="23.6" y="6.5" font-size="1" class="static select-none font-semibold PPDText">
+            <tspan class="PPDTextContent">19.5 PPD</tspan>
+            <tspan class="icon PPDModalButton" style="fill: #4299e1; cursor: pointer;" font-size="1"></tspan>
         </text>
     </g>
-
 </svg>
 
 <script>
@@ -189,7 +190,9 @@
         angle: getElement('angle'),
         ruleMainLine: getElement('ruleMainLine'),
         ruleBottomLine: getElement('ruleBottomLine'),
-        ruleText: getElement('ruleText')
+        ruleText: getElement('ruleText'),
+        PPDText: getElement('PPDText'),
+        PPDTextContent: getElement('PPDTextContent')
     } 
 
     updateGraph('minimumDistanceData');
@@ -197,17 +200,17 @@
                         <div class="border-r">
                             <div class="flex items-center">
                                 <h4 class="font-semibold mb-2">Maximum distance</h4>
-                                <button data-modal-target="4f6607099e5c33a208a41ca93c58572fModal" data-modal-toggle="4f6607099e5c33a208a41ca93c58572fModal" class="mb-4 mx-1 focus:outline-none" type="button">
+                                <button data-modal-target="68f99334cd50bf6aacd69394b590a204Modal" data-modal-toggle="68f99334cd50bf6aacd69394b590a204Modal" id="68f99334cd50bf6aacd69394b590a204ModalButton" class="mb-4 mx-1 focus:outline-none cursor-pointer draggable" type="button">
     <i class="text-sm fa-solid fa-circle-info text-blue-500"></i>
 </button>
 
-<div id="4f6607099e5c33a208a41ca93c58572fModal" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full justify-center items-center">
+<div id="68f99334cd50bf6aacd69394b590a204Modal" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full justify-center items-center">
     <div class="relative w-full max-w-2xl max-h-full">
         <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
             <div class="flex border-b pb-2 items-start justify-between px-4 pt-4 rounded-t dark:border-gray-600">
                 <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
                     Maximum distance                </h3>
-                <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="4f6607099e5c33a208a41ca93c58572fModal">
+                <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="68f99334cd50bf6aacd69394b590a204Modal">
                     <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"></path>
                     </svg>
@@ -240,11 +243,12 @@
 
         <line class="ruleBottomLine" x1="22.5" y1="8.4" x2="23.5" y2="8.4" stroke="black" stroke-width="0.1"></line>
 
-        <text x="23.5" y="5.800000000000001" font-size="1" class="static select-none ruleText">
-            1.40m (4.6ft)
+        <text x="23.6" y="5.1000000000000005" font-size="1" class="static select-none ruleText"></text>
+        <text x="23.6" y="6.5" font-size="1" class="static select-none font-semibold PPDText">
+            <tspan class="PPDTextContent">19.5 PPD</tspan>
+            <tspan class="icon PPDModalButton" style="fill: #4299e1; cursor: pointer;" font-size="1"></tspan>
         </text>
     </g>
-
 </svg>
 
 <script>
@@ -259,7 +263,9 @@
         angle: getElement('angle'),
         ruleMainLine: getElement('ruleMainLine'),
         ruleBottomLine: getElement('ruleBottomLine'),
-        ruleText: getElement('ruleText')
+        ruleText: getElement('ruleText'),
+        PPDText: getElement('PPDText'),
+        PPDTextContent: getElement('PPDTextContent')
     } 
 
     updateGraph('maximumDistanceData');
@@ -267,17 +273,17 @@
                         <div>
                             <div class="flex items-center">
                                 <h4 class="font-semibold mb-2">Visual Acuity distance</h4>
-                                <button data-modal-target="bc5aa270409c69bf56ce66ddeb5dc6d1Modal" data-modal-toggle="bc5aa270409c69bf56ce66ddeb5dc6d1Modal" class="mb-4 mx-1 focus:outline-none" type="button">
+                                <button data-modal-target="b855171c0da26fb11a4618f5234827a5Modal" data-modal-toggle="b855171c0da26fb11a4618f5234827a5Modal" id="b855171c0da26fb11a4618f5234827a5ModalButton" class="mb-4 mx-1 focus:outline-none cursor-pointer draggable" type="button">
     <i class="text-sm fa-solid fa-circle-info text-blue-500"></i>
 </button>
 
-<div id="bc5aa270409c69bf56ce66ddeb5dc6d1Modal" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full justify-center items-center">
+<div id="b855171c0da26fb11a4618f5234827a5Modal" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full justify-center items-center">
     <div class="relative w-full max-w-2xl max-h-full">
         <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
             <div class="flex border-b pb-2 items-start justify-between px-4 pt-4 rounded-t dark:border-gray-600">
                 <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
                     Visual Acuity distance                </h3>
-                <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="bc5aa270409c69bf56ce66ddeb5dc6d1Modal">
+                <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="b855171c0da26fb11a4618f5234827a5Modal">
                     <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"></path>
                     </svg>
@@ -310,11 +316,12 @@
 
         <line class="ruleBottomLine" x1="22.5" y1="8.4" x2="23.5" y2="8.4" stroke="black" stroke-width="0.1"></line>
 
-        <text x="23.5" y="5.800000000000001" font-size="1" class="static select-none ruleText">
-            1.40m (4.6ft)
+        <text x="23.6" y="5.1000000000000005" font-size="1" class="static select-none ruleText"></text>
+        <text x="23.6" y="6.5" font-size="1" class="static select-none font-semibold PPDText">
+            <tspan class="PPDTextContent">19.5 PPD</tspan>
+            <tspan class="icon PPDModalButton" style="fill: #4299e1; cursor: pointer;" font-size="1"></tspan>
         </text>
     </g>
-
 </svg>
 
 <script>
@@ -329,7 +336,9 @@
         angle: getElement('angle'),
         ruleMainLine: getElement('ruleMainLine'),
         ruleBottomLine: getElement('ruleBottomLine'),
-        ruleText: getElement('ruleText')
+        ruleText: getElement('ruleText'),
+        PPDText: getElement('PPDText'),
+        PPDTextContent: getElement('PPDTextContent')
     } 
 
     updateGraph('visualAcuityDistanceData');
@@ -406,7 +415,87 @@
         closeGuideModalButton.click();
     }
 
-</script>    <script src="./index_files/calculate.js.download"></script>    
+</script>    <button data-modal-target="PPDModal" data-modal-toggle="PPDModal" id="PPDModalButton" class="mb-4 mx-1 focus:outline-none cursor-pointer draggable" type="button">
+    <i class="text-sm fa-solid fa-circle-info text-blue-500"></i>
+</button>
+
+<div id="PPDModal" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full justify-center items-center">
+    <div class="relative w-full max-w-2xl max-h-full">
+        <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+            <div class="flex border-b pb-2 items-start justify-between px-4 pt-4 rounded-t dark:border-gray-600">
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+                    Pixel Per Degree (PPD)                </h3>
+                <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="PPDModal">
+                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"></path>
+                    </svg>
+                    <span class="sr-only">Close modal</span>
+                </button>
+            </div>
+            <div class="px-4 pt-2 pb-6 space-y-6">
+                
+            <div>
+                <p>Pixel Per Degree (PPD) is a metric that represents the number of pixels a screen can display within one degree of your field of vision. The higher the PPD value, the more pixels are packed into each degree of your visual field, resulting in sharper and more detailed images. Conversely, a lower PPD indicates a lower level of detail and clarity in the displayed content.</p>
+                <br>
+                <p>Here are some examples of PPD values and their corresponding levels of visual acuity:</p>
+                <div class="max-w-full overflow-x-auto">
+                    <table style="min-width: 400px;" class="w-full bg-white border mt-4">
+                        <thead class="bg-blue-500 text-white text-left">
+                            <tr>
+                                <th class="py-2 px-4">PPD</th>
+                                <th class="py-2 px-4">Vision</th>
+                                <th class="py-2 px-4">Comment</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b border-gray-200">
+                                <td class="py-2 px-4">30 PPD</td>
+                                <td class="py-2 px-4">20/40</td>
+                                <td class="py-2 px-4">Poor vision</td>
+                            </tr>
+                            <tr class="border-b border-gray-200">
+                                <td class="py-2 px-4">57 PPD</td>
+                                <td class="py-2 px-4">20/21</td>
+                                <td class="py-2 px-4">Apple Retina</td>
+                            </tr>
+                            <tr class="border-b border-gray-200">
+                                <td class="py-2 px-4">60 PPD</td>
+                                <td class="py-2 px-4">20/20</td>
+                                <td class="py-2 px-4">Normal vision</td>
+                            </tr>
+                            <tr class="border-b border-gray-200">
+                                <td class="py-2 px-4">80 PPD</td>
+                                <td class="py-2 px-4">20/15</td>
+                                <td class="py-2 px-4">Average vision</td>
+                            </tr>
+                            <tr class="border-b border-gray-200">
+                                <td class="py-2 px-4">120 PPD</td>
+                                <td class="py-2 px-4">20/10</td>
+                                <td class="py-2 px-4">Practical upper limit of visual acuity</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 px-4">150 PPD</td>
+                                <td class="py-2 px-4">20/8</td>
+                                <td class="py-2 px-4">Theoretical upper limit of visual acuity</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+                    </div>
+        </div>
+    </div>
+</div>
+    <script>
+        const buttons = document.querySelectorAll('.PPDModalButton');
+
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                document.getElementById('PPDModalButton').click();
+            });
+        });
+    </script>
+    <script src="./index_files/calculate.js.download"></script>    
     <script src="./index_files/flowbite.min.js.download"></script>    
 
 

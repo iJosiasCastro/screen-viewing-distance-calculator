@@ -10,8 +10,9 @@ var angle = null;
 var ruleMainLine = null;
 var ruleBottomLine = null;
 var ruleText = null;
+var PPDText = null;
+var PPDTextContent = null;
 var screenSize = null;
-
 var angleDegrees = null;
 var distance = null;
 
@@ -25,6 +26,8 @@ function updateGraph(dataVarName){
     ruleMainLine = data.ruleMainLine;
     ruleBottomLine = data.ruleBottomLine;
     ruleText = data.ruleText;
+    PPDText = data.PPDText;
+    PPDTextContent = data.PPDTextContent;
     screenSize = data.screenSize;
     updateConnection(cxn, 'right');
     updateConnection(cxn2, 'left');
@@ -118,8 +121,21 @@ function calculateAngle() {
         const distanceCm = screenSize[1] / (2 * Math.tan(angleInRadians / 2));
         const distanceMeters = distanceCm / 100;
         const distanceFeet = distanceCm / 30.48;
+        const PPD = (screenSize[2] / angleDegrees).toFixed(1);
 
         ruleText.textContent = `${distanceMeters.toFixed(2)}m (${distanceFeet.toFixed(1)}ft)`;
+        PPDTextContent.textContent = `${PPD} PPD`;
+
+        if (PPD > 57) {
+            // green-500
+            PPDText.style.fill = '#10b981';
+        } else if (PPD > 30) {
+            // yellow-500
+            PPDText.style.fill = '#f59e0b';
+        } else {
+            // red-500
+            PPDText.style.fill = '#ef4444';
+        }
 
         distance = distanceMeters;
     }
@@ -129,7 +145,8 @@ function calculateAngle() {
     ruleBottomLine.setAttributeNS(null, 'y1', cxn_y1);
     ruleBottomLine.setAttributeNS(null, 'y2', cxn_y1);
 
-    ruleText.setAttributeNS(null, 'y', (cxn_y1 / 2) + 1.6);
+    ruleText.setAttributeNS(null, 'y', (cxn_y1 / 2) + 0.9);
+    PPDText.setAttributeNS(null, 'y', (cxn_y1 / 2) + 2.3);
 };
 
 function getIntersection(x, dy, cy, h) {
