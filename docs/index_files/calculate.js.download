@@ -8,6 +8,7 @@ function calculate() {
   // If the unit is cm, convert to inches and start with that
   if (unit === "cm") {
     diagonal /= 2.54;
+    unit = 'inches';
   }
   // Calculate aspect ratio and round it to two decimal places
   const aspectRatio = width / height;
