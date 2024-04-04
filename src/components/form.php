@@ -8,7 +8,7 @@
                     'name' => 'HD',
                 ],
                 [
-                    'width' => 1699,
+                    'width' => 1600,
                     'height' => 900,
                     'name' => 'HD+',
                 ],
